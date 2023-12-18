@@ -1,4 +1,4 @@
-namespace vue-project.Models
+namespace vue_project.Models
 {
     public class PipeInfo
     {
