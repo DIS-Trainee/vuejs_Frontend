@@ -1,4 +1,4 @@
-namespace Building.Models
+namespace vuejs.Models
 {
     public class BuildingInfo
     {
