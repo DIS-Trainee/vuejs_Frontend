@@ -79,12 +79,22 @@ export default {
 </script>
 
 <template>
+  <div class="connav">
+    <ul>
+      <a href="#">Home</a>
+      <a href="#">Checklist</a>
+      <a href="#">Thickness</a>
+      <a href="#">Data</a>
+      <a style="float:right" href="https://www.youtube.com/watch?v=6OvT-bJy-Ow&ab_channel=DotaWatafak">DOTA2 WTF</a>
+    </ul>
+  </div>
+
   <div class="contain">
-    <h1>Table about . . . </h1>
+    <h1> Pipe Inspection </h1>
 
     <div class="conTable">
       <div class="searchTagNo">
-        <input v-model="selectedTagNo" list="tagNo" @input="searchTagNo($event)" placeholder="Search Tag No.">
+        <input v-model="selectedTagNo" list="tagNo" @input="searchTagNo($event)" placeholder="  Search Tag No.">
       </div>
       <datalist id="tagNo">
         <option v-for="item in table" :value="item.tag_no" :data-id="item.id">No. {{ item.id }}</option>
@@ -125,7 +135,29 @@ export default {
 
 <style scoped lang="scss">
 @import url('https://unpkg.com/css.gg@2.0.0/icons/css/add-r.css');
-.contain{
+.connav {
+  height: 30px;
+  ul {
+    overflow: hidden;
+    background-color: #333;
+
+    a {
+      display: inline;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      float: left;
+      text-decoration: none;
+
+      &:hover {
+        background: #111;
+      }
+
+    }
+  }
+}
+
+.contain {
   aspect-ratio: 3/4;
   margin: auto;
 
@@ -137,7 +169,6 @@ export default {
 
 h1 {
   text-align: center;
-  background: #c38569;
 }
 
 .addUser {
@@ -145,10 +176,12 @@ h1 {
   background: #000;
   float: right;
   margin-right: 10px;
+
   .gg-add-r {
     color: white;
     background: #0eb717;
     font-size: 20px;
+
     &:hover {
       background: #58db5f;
     }
@@ -185,6 +218,7 @@ h1 {
       background: rgb(58, 207, 63);
       text-align: center;
       margin: auto;
+
       th {
         border-bottom: 1px solid rgb(82, 78, 78);
         background: rgb(175, 215, 216);

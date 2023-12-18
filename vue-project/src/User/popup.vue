@@ -158,17 +158,18 @@ export default {
 
 <template>
     <div id="conM1" class="conM1">
-        <div class="editContent">
+        <div :class="DataU == null ? 'addContent' : 'editContent'">
+
             <span class="closeEdit" v-on:click="closePopup()">&times;</span>
-            <div class="conEdit"><br />
+            
+            <div class="conEditH"><br />
                 <label>{{ DataU == null ? "Add User" : "Edit User" }}</label>
             </div>
             <div class="conEdit">
 
-                <div class="TH">
-                    <p>Tag No.</p>
+                <!-- <div class="TH">
                     <p>ssss</p>
-                </div>
+                </div> -->
 
                 <div class="conInp">
                     <p class="label">Tag No :</p>
@@ -206,34 +207,45 @@ export default {
 <style scoped lang="scss">
 .conM1 {
     position: fixed;
-    transform: translate(10%, -150%);
-    z-index: 9999;
+    top: 0;
+    left: 0;
     width: 80%;
-    margin: auto;
+    margin: 10%;
+
+    .addContent{
+        background: rgb(209, 236, 199);
+        border-radius: 5px;
+    }
 
     .editContent {
-        background: floralwhite;
-        width: 100%;
-        margin: auto;
+        background: rgb(249, 244, 225);
         border-radius: 5px;
-
+    }
+        .conEditH{
+            font-size: 30px;
+            border: 1px;
+        }
         .conEdit {
             text-align: left;
-            font-size: 30;
+            font-size: 25px;
         }
 
         span {
             color: black;
-            font-size: 30px;
+            font-size: 10px;
             float: right;
             margin-right: 10%;
+            font-size: 40px;
+
         }
 
         .conEdit {
             background: none;
             .TH {
+                text-align: center;
                 background: none;
                 border-bottom: 1px solid;
+                // font-size: 50px;
             }
 
             .conInp {
@@ -243,7 +255,7 @@ export default {
 
                 input {
                     margin-right: 20%;
-                    margin-top: 10px;
+                    margin-top: 3%;
                     text-align: left;
                     background: none;
                     border: 1px solid;
@@ -253,7 +265,7 @@ export default {
                 }
             }
         }
-    }
+    
 }
 
 .editBut {
