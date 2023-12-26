@@ -21,13 +21,33 @@ export default {
   },
   methods: {
     createTable() {
-      fetch('https://dis02.dexon-technology.com/api/dexon-exam/get-data-list')
-        .then(res => res.json())
+       //fetch('https://dis02.dexon-technology.com/api/dexon-exam/get-data-list')
+      fetch('https://localhost:7080/api/PipeInfo/pipe-get-all')
         .then(res => {
-          this.table = res
-          this.load = true
+          console.log(res)
+          if (!res.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return res.json();
+        })
+        .then(data => {
+          console.log(data)
+          console.log("          console.log(data)")
+          this.table = data;
+          this.load = true;
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
         });
     },
+    //      fetch('https://dis02.dexon-technology.com/api/dexon-exam/get-data-list')
+    // createTable() {
+    //     .then(res => res.json())
+    //     .then(res => {
+    //       this.table = res
+    //       this.load = true
+    //     });
+    // },
     openPopup(item) {
       this.popClick = !this.popClick;
       this.data = item
@@ -89,7 +109,6 @@ export default {
     </ul>
   </div>
 
-  
   <div class="contain">
     <h1> Pipe Inspection </h1>
 
@@ -136,8 +155,10 @@ export default {
 
 <style scoped lang="scss">
 @import url('https://unpkg.com/css.gg@2.0.0/icons/css/add-r.css');
+
 .connav {
   height: 30px;
+
   ul {
     overflow: hidden;
     background-color: #333;
