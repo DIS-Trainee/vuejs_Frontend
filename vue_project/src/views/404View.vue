@@ -14,11 +14,9 @@
 </template>
 
 <script>
-import ViewLayout from "@/layouts/non-sidebar-layout.vue";
 export default {
   name: "PageNotFound",
   created() {
-    this.$emit(`update:layout`, ViewLayout);
     this.$store.commit("CLEAR_CURRENT_INAPP");
   },
 };

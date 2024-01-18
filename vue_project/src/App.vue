@@ -1,3 +1,25 @@
+<!-- <script setup>
+import { RouterLink, RouterView } from 'vue-router'
+import HelloWorld from './components/HelloWorld.vue'
+</script>
+
+<template>
+  <header>
+    
+
+    <div class="wrapper">
+      <HelloWorld msg="You did it!" />
+
+      <nav>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/about">About</RouterLink>
+      </nav>
+    </div>
+  </header>
+
+  <RouterView />
+</template> -->
+
 <script >
 import editP from "./views/popup.vue"
 import addP from "./views/popup.vue"
@@ -32,7 +54,7 @@ export default {
         })
         .then(data => {
           console.log(data)
-          console.log("          console.log(data)")
+          console.log(" console.log(data)")
           this.table = data;
           this.load = true;
         })
@@ -206,6 +228,8 @@ h1 {
 
     &:hover {
       background: #58db5f;
+      transform: scale(1.02);
+
     }
   }
 }
@@ -266,6 +290,8 @@ h1 {
           &:hover {
             background: #ff9500;
             cursor: pointer;
+            transform: scale(1.02);
+
           }
         }
 
@@ -280,6 +306,8 @@ h1 {
           &:hover {
             background: #f04d02;
             cursor: pointer;
+            transform: scale(1.02);
+
           }
         }
 
